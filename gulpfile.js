@@ -38,7 +38,7 @@ gulp.task('build-js', function() {
 });
 
 gulp.task('build-css', function () {
-  gulp.src('../scss/*package.scss')
+  gulp.src('./scss/*package.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ errLogToConsole: true }))
     .pipe(minifyCSS())

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12">
+    <form name="todoCreateForm" ng-submit="addTodo()">
+      <div class="input-group input-group-lg standalone">
+        <input type="text" ng-model="newTodo.title" class="form-control" placeholder="I need to..." required>
+                            <span class="input-group-btn">
+                                <rb-async-button ng-model="addButton.isProcessing" class="btn btn-success" type="submit">
+                                    <span>
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                        Add item
+                                    </span>
+                                </rb-async-button>
+                            </span>
+      </div>
+    </form>
+
+    <ul class="input-group-list" ng-show="todos.length">
+      <li class="input-group todo-item" ng-repeat="todo in todos">
+                            <span class="input-group-addon">
+                                <input id="todo-{{ todo.id }}" ng-model="todo.is_complete" type="checkbox">
+                            </span>
+        <rb-editable-text ng-model="todo.title" id="todo-edit-{{ todo.id }}" ng-change="renameTodo(todo)"></rb-editable-text>
+                            <span class="input-group-addon">
+                                <button type="button" class="btn btn-danger btn-circular" ng-click="deleteTodo(todo.id)">
+                                  <span class="glyphicon glyphicon-remove icon-delete"></span>
+                                </button>
+                            </span>
+      </li>
+    </ul>
+  </div>
+</div>

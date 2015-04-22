@@ -2,7 +2,7 @@ module.exports = function () {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: '/bundles/organizerclient/js/templates/rbEditableText.html',
+    templateUrl: '/js/templates/rbEditableText.html',
     require: 'ngModel',
     link: function(scope, elem, attrs, ngModel) {
       'use strict';

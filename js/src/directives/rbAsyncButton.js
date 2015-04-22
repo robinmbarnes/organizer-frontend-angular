@@ -13,7 +13,7 @@ module.exports = function () {
     restrict: 'E',
     transclude: true,
     replace: true,
-    templateUrl: '/bundles/organizerclient/js/templates/rbAsyncButton.html',
+    templateUrl: '/js/templates/rbAsyncButton.html',
     require: 'ngModel',
     link: function(scope, elem, attrs, ngModel) {
       scope.$watch(function () {

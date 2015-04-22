@@ -4,9 +4,10 @@
  * @param {$q} $q
  * @constructor
  */
-function TodoManager($http, $q) {
+function TodoManager($http, $q, apiUrl) {
   this._$http = $http;
   this._$q = $q;
+  this._apiUrl = apiUrl;
 }
 
 /**
@@ -29,7 +30,7 @@ TodoManager.prototype.find = function() {
 
   var deferred = this._$q.defer();
 
-  this._$http.get('/api/todo/')
+  this._$http.get(this._apiUrl + '/api/todo/')
     .success(function (data, status, headers, config) {
       deferred.resolve(data);
     })
@@ -49,7 +50,7 @@ TodoManager.prototype.create = function (todo) {
 
   var deferred = this._$q.defer();
 
-  this._$http.post('/api/todo/', todo)
+  this._$http.post(this._apiUrl + '/api/todo/', todo)
     .success(function (data, status, headers, config) {
       deferred.resolve(data);
     })
@@ -68,7 +69,7 @@ TodoManager.prototype.create = function (todo) {
 TodoManager.prototype.delete = function (todoId) {
   var deferred = this._$q.defer();
 
-  this._$http.delete('/api/todo/'+todoId)
+  this._$http.delete(this._apiUrl + '/api/todo/'+todoId)
     .success(function () {
       deferred.resolve();
     })
@@ -87,7 +88,7 @@ TodoManager.prototype.delete = function (todoId) {
 TodoManager.prototype.update = function (todo) {
   var deferred = this._$q.defer();
 
-  this._$http.put('/api/todo/' + todo.id, todo)
+  this._$http.put(this._apiUrl + '/api/todo/' + todo.id, todo)
     .success(function (data) {
       deferred.resolve(data);
     })
