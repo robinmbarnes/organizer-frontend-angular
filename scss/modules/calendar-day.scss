@@ -1,0 +1,32 @@
+$calendarDayBorderColour: #B5B9C4;
+$calendarDayBackgroundColour: rgb(230, 230, 238);
+
+.calendar-day {
+  border-color: $calendarDayBorderColour;
+  border-style: solid;
+  border-width: 1px;
+  border-right-width: 0;
+  border-top-width: 0;
+  box-sizing: border-box;
+  width: 14.28%;
+  height: 100px;
+  float: left;
+  background-color: $calendarDayBackgroundColour;
+
+  &.calendar-day-inactive {
+    opacity: 0.6;
+  }
+
+  .calendar-day-number {
+    margin: 5px 0 0 5px;
+  }
+}
+
+.calendar-day:nth-child(7) {
+  border-right-width: 1px;
+}
+
+.calendar-week:nth-child(1) .calendar-day {
+  border-top-width: 1px;
+}
+

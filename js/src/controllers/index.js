@@ -6,4 +6,10 @@ app.controller('TodoController', [
   require('./TodoController')
 ]);
 
-//
+app.controller('CalendarMonthController', [
+  '$scope',
+  '$routeParams',
+  'MonthDaysGenerator',
+  'MonthInformation',
+  require('./CalendarMonthController')
+]);

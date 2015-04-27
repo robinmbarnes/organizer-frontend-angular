@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default calendar-nav">
+  <div class="container-fluid">
+      <div class="col-lg-4">
+        <h3>{{ model.date | date : 'MMMM yyyy' }}</h3>
+      </div>
+      <div class="col-lg-8 calendar-nav-controls">
+        <div class="btn-group btn-group-justified" role="group">
+          <a class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> {{ model.previousMonth | date : 'MMMM' }}</a>
+          <a class="btn btn-default">{{ model.nextMonth | date : 'MMMM' }} <i class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
+      </div>
+  </div>
+</nav>
+<div class="calendar-month-view">
+  <div class="calendar-week" ng-repeat="week in model.weeks">
+    <div class="calendar-day" ng-class="{'calendar-day-inactive': !model.isDayActive(day) }" ng-repeat="day in week">
+      <div  ng-show="!model.isToday(day)" class="calendar-day-number">{{ day.getDate() }}</div>
+      <span ng-show="model.isToday(day)" class="badge">{{ day.getDate() }}</span>
+    </div>
+  </div>
+</div>

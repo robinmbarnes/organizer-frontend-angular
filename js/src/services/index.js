@@ -6,3 +6,6 @@ app.service('TodoManager', [
   'apiUrl',
   require('./TodoManager')
 ]);
+
+app.factory('MonthDaysGenerator', [require('./MonthDaysGenerator')]);
+app.service('MonthInformation', [require('./MonthInformation')]);
