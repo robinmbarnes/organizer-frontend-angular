@@ -14,6 +14,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       controller: 'CalendarMonthController',
       templateUrl: 'partials/calendar-month.html'
     })
+    .when('/calendar/:year/:month/:day', {
+      controller: 'CalendarDayController',
+      templateUrl: 'partials/calendar-day.html'
+    })
     .otherwise({
       redirectTo: '/todos'
     });

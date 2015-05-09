@@ -13,3 +13,9 @@ app.controller('CalendarMonthController', [
   'MonthInformation',
   require('./CalendarMonthController')
 ]);
+
+app.controller('CalendarDayController', [
+  '$scope',
+  'DayHoursGenerator',
+  require('./CalendarDayController')
+]);
